@@ -1,9 +1,9 @@
 version: '2'
 services:
-	web:
-		volumes_from:
-			-container:lcm-data-sync:rw
+  web:
+    volumes_from:
+      - container:lcm-data-sync:rw
 
-	volumes:
-		lcm-data-sync:
-			external: true
+volumes:
+	lcm-data-sync:
+	external: true

@@ -1,8 +1,8 @@
 syncs:
-	lcm-data-sync:
-		src: '${SYNC_DIRECTORY}' # from config
-		dest: '/var/www' # to the container
-		sync_host_ip: 'localhost'
-		sync_host_port: 10871 # unique port for this sync
-		sync_strategy: 'rsync' # we'll want to change this to nfs in the future
-		sync_excludes_type: 'Path */sites/default/files' # drupal specific, for rsync strategy
+  lcm-data-sync:
+    src: '${SYNC_DIRECTORY}' # from config
+    dest: '/var/www' # to the container
+    sync_host_ip: 'localhost'
+    sync_host_port: 10871 # unique port for this sync
+    sync_strategy: 'rsync' # we'll want to change this to nfs in the future
+    sync_excludes_type: 'Path */sites/default/files' # drupal specific, for rsync strategy
