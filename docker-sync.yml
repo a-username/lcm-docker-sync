@@ -1,8 +1,9 @@
 syncs:
   lcm-data-sync:
-    src: '${SYNC_DIRECTORY}' # from config
-    dest: '/var/www' # to the container
-    sync_host_ip: 'localhost'
+    src: '~/Sites' # from config
+    dest: '/var/www/html' # to the container
+    sync_host_ip: '127.0.0.1'
     sync_host_port: 10871 # unique port for this sync
-    sync_strategy: 'rsync' # we'll want to change this to nfs in the future
-    sync_excludes_type: 'Path */sites/default/files' # drupal specific, for rsync strategy
+    sync_strategy: 'unison' # we'll want to change this to nfs in the future
+    watch_excludes: ['.*/.git', '.*/node_modules', '.*/bower_components', '.*/sass-cache', '.*/.sass-cache', '.*/.sass-cache', '.coffee', '.scss', '.sass', '.gitignore']
+    watch_strategy: 'fswatch'
